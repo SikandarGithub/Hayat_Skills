@@ -1,5 +1,3 @@
-from msilib import schema
-from operator import truediv
 import requests
 from bs4 import BeautifulSoup
 
