@@ -1,0 +1,44 @@
+import time
+from selenium import webdriver
+import urllib
+from selenium.webdriver.common.by import By
+import pandas as pd
+
+options = webdriver.ChromeOptions()
+options.add_argument("--user-data-dir=C:\\Users\\hostw\\AppData\\Local\\Google\\Chrome\\User Data") 
+options.add_argument('--profile-directory=Profile 1')
+browser = webdriver.Chrome(options = options)
+
+
+
+# Read .xlsx  file
+df = pd.read_excel('data.xlsx')
+for ind in df.index:
+    contact = df['Number'][ind]
+    txt_message = df['message'][ind]
+    
+
+    # visit Each Number
+    browser.get(f"https://web.whatsapp.com/send?phone={contact}")
+    
+
+    # Wait to Page load
+    while True:
+        try:
+           
+           input_box = browser.find_element(By.XPATH,"//p[@class='selectable-text copyable-text']")
+           input_box.send_keys(txt_message)
+           time.sleep(2)
+           break
+        except:
+            pass
+    
+    # Send message button Click
+    browser.find_element(By.XPATH,"//span[@data-testid='send']").click()    
+    time.sleep(5)
+
+    
+browser.close()    
+
+
+
