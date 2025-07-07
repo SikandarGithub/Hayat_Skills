@@ -1,9 +1,7 @@
-# Hayat_Skills
-Here  I will share  code I used in my youtube videos
+ Here I share the code used in my YouTube videos.
 
-For more Interesting Videos:
-
-🔔 Subscribe  
+📺 For more interesting videos:
+🔔 Don't forget to Subscribe and stay updated!
    https://www.youtube.com/channel/UC8uhrk311uGUENqEVCg8-0A
 
 🔽 CONNECT WITH ME
